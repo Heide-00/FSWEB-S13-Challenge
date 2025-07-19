@@ -76,7 +76,7 @@ public class CompanyTest {
         Field passwordField = employee.getClass().getDeclaredField("password");
         assertEquals(passwordField.getModifiers(), 2);
 
-        Field healthPlans = employee.getClass().getDeclaredField("healthPlans");
+        Field healthPlans = employee.getClass().getDeclaredField("healthplans");
         assertEquals(healthPlans.getModifiers(), 2);
     }
 
@@ -85,18 +85,18 @@ public class CompanyTest {
     public void testEmployeeInstanceTypes() throws NoSuchFieldException {
         assertThat(employee.getFullName(), instanceOf(String.class));
         assertThat(employee.getEmail(), instanceOf(String.class));
-        assertThat(employee.getHealthPlans(), instanceOf(String[].class));
+        assertThat(employee.getHealthplans(), instanceOf(String[].class));
     }
 
     @DisplayName("addHealthplan method başarılı çalışıyor mu?")
     @Test
     public void testAddHealthplanMethod() throws NoSuchFieldException {
         employee.addHealthPlan(-1, "Test Sigorta");
-        assertEquals(!Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
+        assertEquals(!Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true);
         employee.addHealthPlan(0, "Test Sigorta");
-        assertEquals(!Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
+        assertEquals(!Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true);
         employee.addHealthPlan(1, "Test Sigorta");
-        assertEquals(Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
+        assertEquals(Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true);
     }
 
     @DisplayName("Company sınıf değişkenleri doğru access modifier a sahip mi ?")
