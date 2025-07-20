@@ -8,32 +8,32 @@ public class Employee {
     private String fullName;
     private String email;
     private String password;
-    private String[] healthplans;
+    private String[] healthPlans;
 
-    public Employee( int id,String fullName,String email,String password, String[] healthplans) {
+    public Employee( int id,String fullName,String email,String password, String[] healthPlans) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.password = password;
-        this.healthplans = healthplans;
+        this.healthPlans = healthPlans;
     }
 
     public void addHealthPlan(int index, String name){
-        if(healthplans==null){
-            System.out.println("Healt plan dizisi tanımlı değil.");
+        if(healthPlans==null){
+            System.out.println("Health plan dizisi tanımlı değil.");
             return;
         }
 
-        if(index < 0 || index >= healthplans.length){
+        if(index < 0 || index >= healthPlans.length){
             System.out.println("Geçersiz indeks: "+index);
             return;
         }
 
-        if(healthplans[index]== null || healthplans[index].trim().isEmpty()){
-          healthplans[index]=name;
-          System.out.println("Healt plan  eklendi: " +name);
+        if(healthPlans[index]== null || healthPlans[index].trim().isEmpty()){
+          healthPlans[index]=name;
+          System.out.println("Health plan  eklendi: " +name);
         }else {
-            System.out.println("ilgili indeks zaten dolu: " + healthplans[index]);
+            System.out.println("ilgili indeks zaten dolu: " + healthPlans[index]);
         }
     }
 
@@ -57,9 +57,9 @@ public class Employee {
         return password;
     }
 
-    public String[] getHealthplans() {
+    public String[] getHealthPlans() {
 
-        return healthplans;
+        return healthPlans;
     }
 
     public void setId(int id) {
@@ -82,9 +82,9 @@ public class Employee {
         this.password = password;
     }
 
-    public void setHealthplans(String[] healthplans) {
+    public void setHealthPlans(String[] healthPlans) {
 
-        this.healthplans = healthplans;
+        this.healthPlans = healthPlans;
     }
 
     @Override
@@ -94,7 +94,7 @@ public class Employee {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", healthplans=" + Arrays.toString(healthplans) +
+                ", healthPlans=" + Arrays.toString(healthPlans) +
                 '}';
     }
 }
