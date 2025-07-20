@@ -16,13 +16,13 @@ public class Main {
         Employee employee=new Employee(30,"Ayşe Güçlü","ayseaslan@gmail.com","bmkhgj",healths);
         employee.addHealthPlan(-1,"Test Sigorta");
 
-        Healthplan healthplan=new Healthplan(200,"Standart Health Coverage", Plan.BASIC);
+        HealthPlan healthPlan=new HealthPlan(200,"Standart Health Coverage", Plan.BASIC);
 
         Plan selectedPlan=Plan.PREMIUM;
 
         System.out.println(company);
         System.out.println(employee);
-        System.out.println(healthplan);
+        System.out.println(healthPlan);
         System.out.println("Selected Plan: " + selectedPlan);
     }
 }
