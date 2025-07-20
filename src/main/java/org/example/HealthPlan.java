@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.enums.Plan;
 
-public class Healthplan {
+public class HealthPlan {
 
     private int id;
     private String name;
@@ -10,7 +10,7 @@ public class Healthplan {
 
 
 
-    public Healthplan(int id, String name, Plan plan) {
+    public HealthPlan(int id, String name, Plan plan) {
         this.id = id;
         this.name = name;
         this.plan = plan;
@@ -42,7 +42,7 @@ public class Healthplan {
 
     @Override
     public String toString() {
-        return "Healthplan{" +
+        return "HealthPlan{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", plan='" + plan + '\'' +
