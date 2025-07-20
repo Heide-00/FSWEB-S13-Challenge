@@ -17,15 +17,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(ResultAnalyzer.class)
 public class CompanyTest {
 
-    private HealthPlan healthplan;
+    private HealthPlan healthPlan;
     private Employee employee;
     private Company company;
 
     @BeforeEach
     void setUp() {
-        healthplan = new HealthPlan(1, "A Sigorta", Plan.BASIC);
+        healthPlan = new HealthPlan(1, "A Sigorta", Plan.BASIC);
         String[] healthplans = new String[2];
-        healthplans[0] = healthplan.getName();
+        healthplans[0] = healthPlan.getName();
         employee = new Employee(1, "John Doe", "jd@test.com", "1234", healthplans);
 
         String[] employees = new String[2];
@@ -36,29 +36,29 @@ public class CompanyTest {
     @DisplayName("Healthplan sınıf değişkenleri doğru access modifier a sahip mi ?")
     @Test
     public void testHealthPlanTypesAccessModifiers() throws NoSuchFieldException {
-        Field idField = healthplan.getClass().getDeclaredField("id");
+        Field idField = healthPlan.getClass().getDeclaredField("id");
         assertEquals(idField.getModifiers(), 2);
 
-        Field nameField = healthplan.getClass().getDeclaredField("name");
+        Field nameField = healthPlan.getClass().getDeclaredField("name");
         assertEquals(nameField.getModifiers(), 2);
 
-        Field planField = healthplan.getClass().getDeclaredField("plan");
+        Field planField = healthPlan.getClass().getDeclaredField("plan");
         assertEquals(planField.getModifiers(), 2);
     }
 
     @DisplayName("Healthplan sınıf değişkenleri doğru tipte mi ?")
     @Test
     public void testHealthPlanInstanceTypes() throws NoSuchFieldException {
-        assertThat(healthplan.getId(), instanceOf(Integer.class));
-        assertThat(healthplan.getName(), instanceOf(String.class));
-        assertThat(healthplan.getPlan(), instanceOf(Plan.class));
+        assertThat(healthPlan.getId(), instanceOf(Integer.class));
+        assertThat(healthPlan.getName(), instanceOf(String.class));
+        assertThat(healthPlan.getPlan(), instanceOf(Plan.class));
     }
 
     @DisplayName("Plan sınıf değişkenleri doğru tipte mi ?")
     @Test
     public void testPlanInstanceTypes() throws NoSuchFieldException {
-        assertThat(healthplan.getPlan().getName(), instanceOf(String.class));
-        assertThat(healthplan.getPlan().getPrice(), instanceOf(Integer.class));
+        assertThat(healthPlan.getPlan().getName(), instanceOf(String.class));
+        assertThat(healthPlan.getPlan().getPrice(), instanceOf(Integer.class));
     }
 
     @DisplayName("Employee sınıf değişkenleri doğru access modifier a sahip mi ?")
